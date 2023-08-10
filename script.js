@@ -80,11 +80,10 @@ gsap.to(".page1-bottom" , {
 
 
 const t1 = gsap.timeline({
-  scrollTrigger: {
+  scrollTrigger : {
     trigger: "#page2",
     scroller: "#main",
     start: "top top",
-    end : "40% top",
     markers: true,
     pin: true,
     scrub: 1,
@@ -92,7 +91,7 @@ const t1 = gsap.timeline({
 });
 
 t1.to("#page2 h1", {
-  top: "0%"
+  top: "-50%"
 });
 
 
@@ -111,10 +110,5 @@ const t2 = gsap.timeline({
 t2.to("#page3 h1" , {
   top : "-50%"
 })
-
-
-
-
-
 
 
