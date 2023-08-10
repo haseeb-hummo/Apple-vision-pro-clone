@@ -43,13 +43,14 @@ gsap.to("#page1 video" , {
   }
 })
 
+
 gsap.to("#page1" , {
   scrollTrigger : {
     trigger : "#page1",
     start : "top top",
     end : "bottom top",
     scroller : "#main",
-    pin : true,
+    pin : true
   }
 })
 
@@ -78,22 +79,20 @@ gsap.to(".page1-bottom" , {
 })
 
 
-
 const t1 = gsap.timeline({
   scrollTrigger : {
     trigger: "#page2",
     scroller: "#main",
     start: "top top",
-    markers: true,
+    // markers: true,
     pin: true,
     scrub: 1,
   },
 });
 
 t1.to("#page2 h1", {
-  top: "-50%"
+  top: "-50%",
 });
-
 
 
 const t2 = gsap.timeline({
@@ -101,7 +100,7 @@ const t2 = gsap.timeline({
     trigger : "#page3",
     scroller : "#main",
     start : "top top",
-    markers : true,
+    // markers : true,
     pin : true,
     scrub : 1,
   }
@@ -110,5 +109,6 @@ const t2 = gsap.timeline({
 t2.to("#page3 h1" , {
   top : "-50%"
 })
+
 
 
