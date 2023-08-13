@@ -166,9 +166,9 @@ function setupCanvas() {
       trigger: canvas,
       start: "5% top",
       scroller: "#main",
-      scrub: 1,
+      scrub: 0.5,
       pin: true,
-      markers: true,
+      // markers: true,
       onEnter: () => {
         TweenMax.to(canvas, 2, { width: "70%", height: "70%", ease: "power2.out" });
       },
@@ -214,3 +214,4 @@ function setupCanvas() {
 
 // Initialize the canvas setup
 setupCanvas();
+
