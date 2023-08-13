@@ -1,58 +1,64 @@
+/* Define custom fonts using @font-face */
 @font-face {
     font-family: 'SFPro';
     font-weight: 300;
-    src: url('./SF\ Pro/SF-Pro-300-Light.otf');
-}
-
-@font-face {
+    src: url('./SF Pro/SF-Pro-300-Light.otf');
+  }
+  
+  /* Define other font weights */
+  @font-face {
     font-family: 'SFPro';
     font-weight: 500;
-    src: url('./SF\ Pro/SF-Pro-500-Medium.otf');
-}
-@font-face {
+    src: url('./SF Pro/SF-Pro-500-Medium.otf');
+  }
+  
+  @font-face {
     font-family: 'SFPro';
     font-weight: 600;
-    src: url('./SF\ Pro/SF-Pro-600-Semibold.otf');
-}
-
-@font-face {
+    src: url('./SF Pro/SF-Pro-600-Semibold.otf');
+  }
+  
+  @font-face {
     font-family: 'SFPro';
     font-weight: 700;
-    src: url('./SF\ Pro/SF-Pro-700-bold.otf');
-}
-
-@font-face {
+    src: url('./SF Pro/SF-Pro-700-bold.otf');
+  }
+  
+  @font-face {
     font-family: 'SFPro';
     font-weight: 900;
-    src: url('./SF\ Pro/SF-Pro-900-Black.otf');
-}
-
-* {
+    src: url('./SF Pro/SF-Pro-900-Black.otf');
+  }
+  
+  /* Reset default styles and apply custom font */
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "SFPro";
-}
-
-html,
-body {
+  }
+  
+  /* Set full height and width for HTML and body */
+  html,
+  body {
     height: 100%;
     width: 100%;
-}
-
-#main {
+  }
+  
+  /* Styling for the main container */
+  #main {
     position: relative;
     overflow: hidden;
-}
-
-
-
-#page1 {
+  }
+  
+  /* Styling for #page1 */
+  #page1 {
     position: relative;
     height: 100vh;
     width: 100vw;
     background-color: black;
 
+    /* Styling for navigation */
     & nav {
         height: 8vh;
         width: 76vw;
@@ -91,6 +97,7 @@ body {
         z-index: -1;
     }
 
+    /* Styling for .page1-bottom */
     & .page1-bottom {
         position: absolute;
         bottom: 10%;
@@ -114,6 +121,7 @@ body {
     }
 }
 
+/* Styling for shading effect and common video/heading styling */
 /* #page2 and #page3 shading effect and h1 , video tag styling*/
 
 .shadingEffect::before {
@@ -147,6 +155,7 @@ body {
     }
 }
 
+/* Styling for #page2 */
 #page2 {
     height: 100vh;
     width: 100vw;
@@ -155,6 +164,7 @@ body {
     transition: opacity 0.5s ease-in-out;
 }
 
+/* Styling for #page3 */
 #page3 {
     height: 100vh;
     width: 100vw;
@@ -166,6 +176,7 @@ body {
     }
 }
 
+/* Styling for #page4 */
 #page4 {
     height: 100vh;
     width: 100vw;
@@ -240,6 +251,7 @@ body {
 
 }
 
+/* Styling for #page5 */
 #page5 {
     height: 100vh;
     width: 100vw;
@@ -282,6 +294,7 @@ body {
     }
 }
 
+/* Styling for #page6 */
 #page6 {
     height: 300vh;
     width: 100vw; 
@@ -378,11 +391,12 @@ body {
     }
 }
 
+/* Styling for #page7 */
 #page7 {
     height: 100vh;
     width: 100vw;
     position: relative;
-    background: linear-gradient(to bottom, #e8e8ed7A, #ffffff7A);
+    background-color: #e8e8ed7A;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -413,3 +427,35 @@ body {
         line-height: 1.3;
     }
 }
+
+/* Styling for #page8 */
+#page8 {
+    /* Set the height to cover 300vh, or adapt to multiple pages with 100vh each */
+    height: 300vh;
+    /* If you add more pages, use this to set height to 100vh */
+    /* height: 100vh; */
+  
+    width: 100vw;
+    position: relative;
+    background-color: #e8e8ed7A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    & canvas {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* 
+  #page9, #page10 {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-color: #e8e8ed7A;
+  } 
+  */
+  
