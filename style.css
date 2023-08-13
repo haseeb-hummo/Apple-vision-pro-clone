@@ -441,12 +441,11 @@ body {
     width: 15%;
     letter-spacing: -0.5px;
   }
+}
 
-  
-  /* Styling for black text within the styled text block */
-  & .blackText {
-    color: #1d1d1f;
-  }
+/* Styling for black text within the styled text block */
+.blackText {
+  color: #1d1d1f;
 }
 
 /* Styling for #page8 */
@@ -499,7 +498,6 @@ body {
   }
 }
 
-
 #page10 {
   height: 100vh;
   width: 100vw;
@@ -513,3 +511,95 @@ body {
   }
 }
 
+#page11 {
+  height: 200vh;
+  width: 100vw;
+  position: relative;
+  background-color: #fff;
+  gap: 50px;
+
+  & .left {
+    position: absolute;
+    gap: 50px;
+    top: 5%;
+    left: 5%;
+    height: 60%;
+    width: 43.5%;
+    background-image: url("https://www.apple.com/v/apple-vision-pro/a/images/overview/design/glass_top__k3b8lzqd1l2m_large.jpg");
+    background-size: cover;
+  }
+
+  & .right {
+    position: absolute;
+    gap: 50px;
+    top: 5%;
+    right: 5%;
+    height: 60%;
+    width: 43.5%;
+    background-image: url("https://www.apple.com/v/apple-vision-pro/a/images/overview/design/glass_side__gm4agomrwl2e_large.jpg");
+    background-size: cover;
+  }
+
+  & .bottom {
+    color: #86868b;
+    height: 32%;
+    width: 47%;
+    text-align: center;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    & p {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+  }
+}
+
+#page12 {
+  height: 150vh;
+  width: 100vw;
+  position: relative;
+  background-color: #fff;
+
+  & .img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 80%;
+    background-image: url("https://www.apple.com/v/apple-vision-pro/a/images/overview/design/light_seal__fo87cv0zkcmm_large.jpg");
+    background-size: cover;
+  }
+
+  & button {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    gap: 15px;
+    padding: 15px 30px;
+    border-radius: 30px;
+    border: none;
+    letter-spacing: -0.5px;
+    background-color: #ff5a00;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 50px;
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    & i {
+      font-size: 30px;
+    }
+
+    &:hover {
+      opacity: 90%;
+    }
+  }
+}
