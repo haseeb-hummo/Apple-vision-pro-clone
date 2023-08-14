@@ -719,3 +719,30 @@ body {
     }
   }
 }
+
+footer {
+  background-color: #e8e8ed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+
+  & svg {
+    margin-right: 10px;
+  }
+
+  & p {
+    text-align: center;
+    margin: 0;
+    color: #6e6e73;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2px;
+  }
+
+  & .footer-hover:hover {
+    fill: #6e6e73;
+    transition: all ease 0.2s;
+  }
+}
