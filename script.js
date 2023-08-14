@@ -114,7 +114,7 @@ t2.to("#page3 h1", {
 
 
 
-function setupCanvas() {
+function setupCanvas1() {
   // Get canvas and context
   const canvas = document.querySelector("#page8 canvas");
   const context = canvas.getContext("2d");
@@ -213,5 +213,99 @@ function setupCanvas() {
 }
 
 // Initialize the canvas setup
-setupCanvas();
+setupCanvas1();
 
+
+
+function setupCanvas2() {
+  // Get canvas and context
+  const canvas = document.querySelector("#page13 canvas");
+  const context = canvas.getContext("2d");
+
+  // Set initial canvas dimensions
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+
+  // Handle window resize
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    render();
+  });
+
+  // Image information
+  const canvasInfo = {
+    totalFrames: 25,
+    images: [],
+    currentFrame: 0,
+    currentImage: (index) =>
+      `./Apple vision canvas images/Vision000${index.toString().padStart(2, 0)}.png`,
+  };
+
+  // Load first image
+  const img = new Image();
+  img.src = canvasInfo.currentImage(0);
+  img.onload = () => {
+    canvas.height = img.height;
+    canvas.width = img.width;
+    render();
+  };
+
+  // Load all images
+  for (let i = 0; i < canvasInfo.totalFrames; i++) {
+    const img = new Image();
+    img.src = canvasInfo.currentImage(i);
+    canvasInfo.images.push(img);
+  }
+
+  // GSAP animation
+  gsap.to(canvasInfo, {
+    currentFrame: canvasInfo.totalFrames - 1,
+    snap: "currentFrame",
+    ease: "none",
+    scrollTrigger: {
+      trigger: canvas,
+      start: "27% top",
+      scroller: "#main",
+      pin : true,
+      scrub: 0.15,
+      // markers: true,
+    },
+    onUpdate: render,
+  });
+
+  // Draw initial image on canvas
+  canvasInfo.images[0].onload = () => {
+    context.drawImage(canvasInfo.images[0], 0, 0);
+  };
+
+  // Render function
+  function render() {
+    scaleImage(canvasInfo.images[canvasInfo.currentFrame], context);
+  }
+
+  // Scale and draw image
+  function scaleImage(img, ctx) {
+    var canvas = ctx.canvas;
+    var hRatio = canvas.width / img.width;
+    var vRatio = canvas.height / img.height;
+    var ratio = Math.min(hRatio, vRatio);
+    var centerShift_x = (canvas.width - img.width * ratio) / 2;
+    var centerShift_y = (canvas.height - img.height * ratio) / 2;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(
+      img,
+      0,
+      0,
+      img.width,
+      img.height,
+      centerShift_x,
+      centerShift_y,
+      img.width * ratio,
+      img.height * ratio
+    );
+  }
+}
+
+// Initialize the canvas setup
+setupCanvas2();
